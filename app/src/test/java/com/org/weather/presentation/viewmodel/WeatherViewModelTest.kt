@@ -31,8 +31,7 @@ class WeatherViewModelTest {
 
     @Before
     fun setUp() {
-//        Dispatchers.setMain(testDispatcher) // Set the Main dispatcher for testing
-            testDispatcher = TestDispatchers()
+        testDispatcher = TestDispatchers()
         // Mock the SharedPreferences editor
         `when`(mockSharedPreferences.edit()).thenReturn(mockEditor)
 
