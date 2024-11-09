@@ -69,7 +69,6 @@ fun WeatherDetailsScreen(
                 // Wind and humidity details
                 WeatherDetailRow(label = "Wind Speed", value = data.windSpeed)
                 WeatherDetailRow(label = "Humidity", value = data.humidity)
-                WeatherDetailRow(label = "UV Index", value = data.uvIndex)
                 WeatherDetailRow(label = "Dew Point", value = data.dewPoint)
                 WeatherDetailRow(label = "Visibility", value = data.visibility)
 
@@ -117,7 +116,6 @@ fun PreviewWeatherDetailsScreen() {
         condition = "Mist. Moderate breeze",
         windSpeed = "7.2m/s E",
         humidity = "92",
-        uvIndex = "0",
         dewPoint = "19",
         visibility = "3.2km"
     )

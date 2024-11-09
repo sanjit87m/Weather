@@ -9,7 +9,6 @@ data class WeatherDisplayData(
     val condition: String,
     val windSpeed: String,
     val humidity: String,
-    val uvIndex: String, // Assuming it's part of the API; otherwise, you can set it as "N/A"
     val dewPoint: String,
     val visibility: String
 )

@@ -80,7 +80,6 @@ class WeatherUseCaseTest {
             condition="Overcast clouds",
             windSpeed="5.66 m/s E",
             humidity="86%",
-            uvIndex="0",
             dewPoint="15°C",
             visibility="10.0 km"
         )

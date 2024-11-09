@@ -53,7 +53,6 @@ class WeatherViewModelTest {
         condition = "Mist. Moderate breeze",
         windSpeed = "7.2m/s E",
         humidity = "92",
-        uvIndex = "0",
         dewPoint = "19",
         visibility = "3.2km"
     )

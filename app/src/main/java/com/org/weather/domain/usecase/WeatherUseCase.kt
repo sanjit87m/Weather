@@ -35,7 +35,6 @@ class WeatherUseCase @Inject constructor(private val weatherRepository: WeatherR
             condition = response.weather.firstOrNull()?.description?.capitalize() ?: "Unknown",
             windSpeed = "${response.wind.speed} m/s ${getWindDirection(response.wind.deg)}",
             humidity = "${response.main.humidity}%",
-            uvIndex = "0", // Placeholder if UV data isn't available
             dewPoint = "${dewPointCelsius}°C",
             visibility = "${response.visibility / 1000.0} km"
         )
