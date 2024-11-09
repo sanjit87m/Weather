@@ -5,6 +5,7 @@ import com.org.weather.domain.model.WeatherDisplayData
 import com.org.weather.domain.repository.WeatherRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.util.Locale
 import javax.inject.Inject
 
 class WeatherUseCase @Inject constructor(private val weatherRepository: WeatherRepository): UseCase {
@@ -32,7 +33,12 @@ class WeatherUseCase @Inject constructor(private val weatherRepository: WeatherR
             country = response.sys.country,
             temperature = temperatureCelsius,
             feelsLike = feelsLikeCelsius,
-            condition = response.weather.firstOrNull()?.description?.capitalize() ?: "Unknown",
+            condition = response.weather.firstOrNull()?.description?.replaceFirstChar {
+                if (it.isLowerCase()) it.titlecase(
+                    Locale.ROOT
+                ) else it.toString()
+            }
+                ?: "Unknown",
             windSpeed = "${response.wind.speed} m/s ${getWindDirection(response.wind.deg)}",
             humidity = "${response.main.humidity}%",
             dewPoint = "${dewPointCelsius}°C",
